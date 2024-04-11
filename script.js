@@ -59,6 +59,8 @@ const displayImg = function (photos) {
 document.addEventListener("DOMContentLoaded", function () {
   const loadImagesBtn = document.querySelector("#loadImagesBtn");
   const loadSecondaryImagesBtn = document.querySelector("#loadSecondaryImagesBtn");
+  const searchInput = document.querySelector("#searchInput");
+  const searchBtn = document.querySelector("#searchBtn");
 
   loadImagesBtn.addEventListener("click", () => {
     fetchImg("https://api.pexels.com/v1/search?query=frog");
@@ -66,6 +68,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   loadSecondaryImagesBtn.addEventListener("click", () => {
     fetchImg("https://api.pexels.com/v1/search?query=football");
+  });
+
+  searchBtn.addEventListener("click", () => {
+    fetchImg(`https://api.pexels.com/v1/search?query=${searchInput.value}`);
   });
 
   document.addEventListener("click", function (event) {
