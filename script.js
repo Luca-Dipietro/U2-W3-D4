@@ -28,7 +28,7 @@ const displayImg = function (photos) {
   container.innerHTML = "";
 
   photos.forEach((photo) => {
-    const img = photo.src.large;
+    const img = photo.src.landscape;
     const title = photo.photographer;
     const description = photo.alt;
     const id = photo.id;
@@ -38,20 +38,20 @@ const displayImg = function (photos) {
     <div class="card mb-4 shadow-sm">
       <img src="${img}" class="bd-placeholder-img card-img-top" />
       <div class="card-body">
-      <h5 class="card-title">${title}</h5>
-      <p class="card-text">
-      ${description}
-      </p>
-      <div class="d-flex justify-content-between align-items-center">
-          <div class="btn-group">
+       <h5 class="card-title">${title}</h5>
+       <p class="card-text">
+       ${description}
+       </p>
+       </div>
+       <div class="d-flex justify-content-between align-items-center mb-4 mx-4">
+        <div class="btn-group">
           <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
           <button type="button" class="btn btn-sm btn-outline-secondary btn-hide">Hide</button>
           </div>
           <small class="text-muted">${id}</small>
-          </div>
-          </div>
-          </div>
-          </div>`;
+        </div>
+       </div>
+    </div>`;
     container.appendChild(div);
   });
 };
